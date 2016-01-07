@@ -5,16 +5,25 @@
   
   <title>ClassNotFound VS NoClassDef | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="The difference between ClassNotFoundException and NoClassDefFoundError
+--ClassNotFoundException
+Thrown when an application tries to load in a class through its string name using 
+    1) Class.forname(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ClassNotFound VS NoClassDef">
 <meta property="og:url" content="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-01-07T11:45:12.000Z">
+<meta property="og:description" content="The difference between ClassNotFoundException and NoClassDefFoundError
+--ClassNotFoundException
+Thrown when an application tries to load in a class through its string name using 
+    1) Class.forname(">
+<meta property="og:updated_time" content="2016-01-07T12:03:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ClassNotFound VS NoClassDef">
-<meta name="twitter:description">
+<meta name="twitter:description" content="The difference between ClassNotFoundException and NoClassDefFoundError
+--ClassNotFoundException
+Thrown when an application tries to load in a class through its string name using 
+    1) Class.forname(">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -82,11 +91,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>The difference between ClassNotFoundException and NoClassDefFoundError</p>
+<pre><code>--ClassNotFoundException
+Thrown when an application tries to load in a class through its string name using 
+    1) Class.forname() method in class Class.
+    2) ClassLoader.findSystemClass method in class ClassLoader.
+    3) ClassLoader.loadClass() in class ClassLoader.
+As for ClassNotFoundException, it appears that it may stem from trying to make reflective calls to classes at runtime, but the classes the program is trying to call is does not exist.
+
+
+--NoClassDefFoundError
+Thrown if the JVM or a ClassLoader instance tries to load in the definition of a class but no definition could be found.
+So, it appears that the NoClassDefFoundError occurs when the source was successfully compiled, but at runtime, the required class files were not found. This may be something that can happen in the distribution or production of JAR files, where not all the required class files were included.
+Usually happened when a ref is not found in a class
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/" data-id="cij47ep9q0002208sys9zsi4b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/" data-id="cij47hr0i00022l8s5mtdrnoi" class="article-share-link">Share</a>
       
       
     </footer>
