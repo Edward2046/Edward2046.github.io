@@ -3,27 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ClassNotFound VS NoClassDef | Hexo</title>
+  <title>Lniux下循环使用Curl脚本 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The difference between ClassNotFoundException and NoClassDefFoundError
---ClassNotFoundException
-Thrown when an application tries to load in a class through its string name using 
-    1) Class.forname(">
+  <meta name="description" content="1.关于curl
+再说curl有必要了解下libcurl,摘自wikipedia &amp;quot;libcurl is a free client-side URL transfer library, supporting FTP, FTPS, HTTP, HTTPS, SCP, Telent..&amp;quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而curl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ClassNotFound VS NoClassDef">
-<meta property="og:url" content="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/index.html">
+<meta property="og:title" content="Lniux下循环使用Curl脚本">
+<meta property="og:url" content="http://yoursite.com/2016/01/31/Lniux下循环使用Curl脚本/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="The difference between ClassNotFoundException and NoClassDefFoundError
---ClassNotFoundException
-Thrown when an application tries to load in a class through its string name using 
-    1) Class.forname(">
-<meta property="og:updated_time" content="2016-01-07T12:03:42.000Z">
+<meta property="og:description" content="1.关于curl
+再说curl有必要了解下libcurl,摘自wikipedia &amp;quot;libcurl is a free client-side URL transfer library, supporting FTP, FTPS, HTTP, HTTPS, SCP, Telent..&amp;quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而curl">
+<meta property="og:updated_time" content="2016-01-31T12:25:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ClassNotFound VS NoClassDef">
-<meta name="twitter:description" content="The difference between ClassNotFoundException and NoClassDefFoundError
---ClassNotFoundException
-Thrown when an application tries to load in a class through its string name using 
-    1) Class.forname(">
+<meta name="twitter:title" content="Lniux下循环使用Curl脚本">
+<meta name="twitter:description" content="1.关于curl
+再说curl有必要了解下libcurl,摘自wikipedia &amp;quot;libcurl is a free client-side URL transfer library, supporting FTP, FTPS, HTTP, HTTPS, SCP, Telent..&amp;quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而curl">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,10 +63,10 @@ Thrown when an application tries to load in a class through its string name usin
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ClassNotFound-VS-NoClassDef" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Lniux下循环使用Curl脚本" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/07/ClassNotFound-VS-NoClassDef/" class="article-date">
-  <time datetime="2016-01-07T11:45:12.000Z" itemprop="datePublished">2016-01-07</time>
+    <a href="/2016/01/31/Lniux下循环使用Curl脚本/" class="article-date">
+  <time datetime="2016-01-31T11:48:20.000Z" itemprop="datePublished">2016-01-31</time>
 </a>
     
   </div>
@@ -83,7 +77,7 @@ Thrown when an application tries to load in a class through its string name usin
         
   
     <h1 class="article-title" itemprop="name">
-      ClassNotFound VS NoClassDef
+      Lniux下循环使用Curl脚本
     </h1>
   
 
@@ -91,24 +85,45 @@ Thrown when an application tries to load in a class through its string name usin
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>The difference between ClassNotFoundException and NoClassDefFoundError</p>
-<pre><code>--ClassNotFoundException
-Thrown when an application tries to load in a class through its string name using 
-    1) Class.forname() method in class Class.
-    2) ClassLoader.findSystemClass method in class ClassLoader.
-    3) ClassLoader.loadClass() in class ClassLoader.
-As for ClassNotFoundException, it appears that it may stem from trying to make reflective calls to classes at runtime, but the classes the program is trying to call is does not exist.
+        <pre><code>1.关于curl
+再说curl有必要了解下libcurl,摘自wikipedia &quot;libcurl is a free client-side URL transfer library, supporting FTP, FTPS, HTTP, HTTPS, SCP, Telent..&quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而curl不过是libcurl的一个命令而已，curl最常用的方式便是curl www.example.com用于获取
+该url的网页内容。以下为curl的常用参数
 
+curl -o /tmp/sina.html http://www.sina.com.cn/ : 将新浪主页的内容抓取下来并存放到本地的tmp目录下。
+curl -I http://www.sina.com.cn/ :只显示文档信息，不显示全部内容，主要用于判断该url是否OK。
+curl -X POST http://www.sina.com.cn/: curl默认的http请求方式是GET，-x参数可以改变http请求方式。
 
---NoClassDefFoundError
-Thrown if the JVM or a ClassLoader instance tries to load in the definition of a class but no definition could be found.
-So, it appears that the NoClassDefFoundError occurs when the source was successfully compiled, but at runtime, the required class files were not found. This may be something that can happen in the distribution or production of JAR files, where not all the required class files were included.
-Usually happened when a ref is not found in a class
+关于curl的常用使用方式就这些，下面看看如何在linux下循环使用curl,主要是linux中while和for循环的嵌套使用。
+
+2.while循环和for循环的嵌套使用。
+废话不多少，来个实例场景，我想看看大众点评网是不是每个城市都有对应的主页，思路如下：
+    a.通过while循环读取城市列表，每一行中有多个城市通过逗号分隔。
+    b.在while循环中，每读一行，for循环读取这一行中的每一个城市。
+    c.每读一个城市通过curl -I来获取返回HTTP请求信息。
+    d.打印结束，注意echo 后要加一个空格。
+
+看看代码：
+
+#!bin/bash
+#curl的小工具
+#cityList=&quot;shanghai,dalian,beijing,qingdao,nanchang,taiyuan&quot;
+RESULTFILE=&quot;/tmp/HttpCityCodeNew.txt&quot;
+IFS=&quot;,&quot;
+echo &quot;----------开始读取城市列表文件----------&quot;
+cat $1 | while read line
+do
+    for city in $line
+    do
+            curl http://www.dianping.com/$city -I &gt;&gt; $RESULTFILE
+    done
+    echo &quot;--------------结束一行的读取--------------&quot;
+done
+echo &quot;---------------结束所有的读取----------------&quot;
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/" data-id="cik2itwz90005d98slvyf00tt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/31/Lniux下循环使用Curl脚本/" data-id="cik2itwz60003d98sjvjv1kcm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -117,19 +132,10 @@ Usually happened when a ref is not found in a class
     
 <nav id="article-nav">
   
-    <a href="/2016/01/31/Do-you-really-need-to-Buy-a-car/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Do you really need to Buy a car
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/03/2016最想做的十件事情/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/31/深入分析Volatile/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">2016最想做的十件事情</div>
+      <div class="article-nav-title">深入分析Volatile</div>
     </a>
   
 </nav>
