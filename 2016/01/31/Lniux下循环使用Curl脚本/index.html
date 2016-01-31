@@ -17,7 +17,7 @@ FTP, FTPS, HTTP, HTTPS, SCP, Telent..&amp;quot;,也就是这说libcurl是个URL�
 再说curl有必要了解下libcurl,摘自wikipedia &amp;quot;libcurl is a free client-side URL transfer library, supporting
 FTP, FTPS, HTTP, HTTPS, SCP, Telent..&amp;quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，
 而cur">
-<meta property="og:updated_time" content="2016-01-31T12:37:28.000Z">
+<meta property="og:updated_time" content="2016-01-31T12:41:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lniux下循环使用Curl命令">
 <meta name="twitter:description" content="1.关于curl
@@ -103,7 +103,7 @@ curl -X POST http://www.sina.com.cn/: curl默认的http请求方式是GET，-x�
 关于curl的常用使用方式就这些，下面看看如何在linux下循环使用curl,主要是linux中while和for循环的嵌套使用。
 
 2.while循环和for循环的嵌套使用。
-废话不多少，来个实例场景，我想看看大众点评网是不是每个城市都有对应的主页，思路如下：
+废话不多说，来个实例场景，我想看看大众点评网是不是每个城市都有对应的主页，思路如下：
     a.通过while循环读取城市列表，每一行中有多个城市通过逗号分隔。
     b.在while循环中，每读一行，for循环读取这一行中的每一个城市。
     c.每读一个城市通过curl -I来获取返回HTTP请求信息。
@@ -130,7 +130,7 @@ echo &quot;---------------结束所有的读取----------------&quot;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/31/Lniux下循环使用Curl脚本/" data-id="cik2j8sae0003fb8selmel7vg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/31/Lniux下循环使用Curl脚本/" data-id="cik2jflyl0003fr8sdvtgfn9n" class="article-share-link">Share</a>
       
       
     </footer>
