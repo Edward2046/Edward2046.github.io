@@ -163,6 +163,88 @@ echo &quot;---------------结束所有的读取----------------&quot;
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/01/31/Linux下循环使用Curl脚本/" title="Linux下循环使用Curl命令" itemprop="url">Linux下循环使用Curl命令</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="EdwardGuo" target="_blank" itemprop="author">EdwardGuo</a>
+		
+  <p class="article-time">
+    <time datetime="2016-01-31T11:48:20.000Z" itemprop="datePublished"> 發表於 2016-01-31</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <pre><code>1.关于curl
+再说curl有必要了解下libcurl,摘自wikipedia &quot;libcurl is a free client-side URL transfer library, supporting, FTP, FTPS, HTTP, HTTPS, SCP, Telent..&quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而curl不过是libcurl的一个命令而已，curl最常用的方式便是curl www.example.com 用于获取该url的网页内容。
+以下为curl的常用参数
+curl -o /tmp/sina.html http://www.sina.com.cn/ : 将新浪主页的内容抓取下来并存放到本地的tmp目录下。
+curl -I http://www.sina.com.cn/ :只显示文档信息，不显示全部内容，主要用于判断该url是否OK。
+curl -X POST http://www.sina.com.cn/: curl默认的http请求方式是GET，-x参数可以改变http请求方式。
+
+关于curl的常用使用方式就这些，下面看看如何在linux下循环使用curl,主要是linux中while和for循环的嵌套使用。
+
+2.while循环和for循环的嵌套使用。
+废话不多说，来个实例场景，我想看看大众点评网是不是每个城市都有对应的主页，思路如下：
+    a.通过while循环读取城市列表，每一行中有多个城市通过逗号分隔。
+    b.在while循环中，每读一行，for循环读取这一行中的每一个城市。
+    c.每读一个城市通过curl -I来获取返回HTTP请求信息。
+    d.打印结束，注意echo 后要加一个空格。
+
+看看代码：
+
+#!bin/bash
+#curl的小工具
+#cityList=&quot;shanghai,dalian,beijing,qingdao,nanchang,taiyuan&quot;
+RESULTFILE=&quot;/tmp/HttpCityCodeNew.txt&quot;
+IFS=&quot;,&quot;
+echo &quot;----------开始读取城市列表文件----------&quot;
+cat $1 | while read line
+do
+    for city in $line
+    do
+            curl http://www.dianping.com/$city -I &gt;&gt; $RESULTFILE
+    done
+    echo &quot;--------------结束一行的读取--------------&quot;
+done
+echo &quot;---------------结束所有的读取----------------&quot;
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/01/31/深入分析Volatile/" title="深入分析Volatile" itemprop="url">深入分析Volatile</a>
   </h1>
   <p class="article-author">By
