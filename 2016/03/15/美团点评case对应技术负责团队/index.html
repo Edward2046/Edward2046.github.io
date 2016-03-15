@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>HttpClient踩坑有感 | 天生爱跑</title>
+    <title>美团点评case对应技术负责团队 | 天生爱跑</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="EdwardGuo">
     
 
     
-    <meta name="description" content="本周在HttpClient上犯了个低级错误，未给HttpClient设置最大连接数(HttpClient默认单路由最大Http连接数为2)，导致并发量高时Http请求大量处于等待状态，借此机会，正好对比了下HttpClient和HttpURLConnection，以此铭记。
-HttpClient 执行一次Http Get请求主要经过以下步骤：    1，租一个 Http链接，源码中用了lease这">
+    <meta name="description" content="客服小伙伴每天面对成百上千的case，经常找不到对应的负责，以下整理了下各个业务对应的负责团队和负责人，希望客服小伙从case中提取有效信息，找到相应团队，该信息会持续更新。
+1，商家验券问题，如验不了券，请商家提供下验券失败的返回信息，验证门店非法等问题请联系–券服务研发 &amp;#x61;&amp;#x70;&amp;#111;&amp;#108;&amp;#x6c;&amp;#x6f;&amp;#x2e;&amp;#114;&amp;#x65;&amp;#x63;&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HttpClient踩坑有感">
-<meta property="og:url" content="http://yoursite.com/2016/03/13/HttpClient踩坑有感/index.html">
+<meta property="og:title" content="美团点评case对应技术负责团队">
+<meta property="og:url" content="http://yoursite.com/2016/03/15/美团点评case对应技术负责团队/index.html">
 <meta property="og:site_name" content="天生爱跑">
-<meta property="og:description" content="本周在HttpClient上犯了个低级错误，未给HttpClient设置最大连接数(HttpClient默认单路由最大Http连接数为2)，导致并发量高时Http请求大量处于等待状态，借此机会，正好对比了下HttpClient和HttpURLConnection，以此铭记。
-HttpClient 执行一次Http Get请求主要经过以下步骤：    1，租一个 Http链接，源码中用了lease这">
-<meta property="og:updated_time" content="2016-03-13T14:38:11.000Z">
+<meta property="og:description" content="客服小伙伴每天面对成百上千的case，经常找不到对应的负责，以下整理了下各个业务对应的负责团队和负责人，希望客服小伙从case中提取有效信息，找到相应团队，该信息会持续更新。
+1，商家验券问题，如验不了券，请商家提供下验券失败的返回信息，验证门店非法等问题请联系–券服务研发 &amp;#x61;&amp;#x70;&amp;#111;&amp;#108;&amp;#x6c;&amp;#x6f;&amp;#x2e;&amp;#114;&amp;#x65;&amp;#x63;&amp;#">
+<meta property="og:updated_time" content="2016-03-15T03:40:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HttpClient踩坑有感">
-<meta name="twitter:description" content="本周在HttpClient上犯了个低级错误，未给HttpClient设置最大连接数(HttpClient默认单路由最大Http连接数为2)，导致并发量高时Http请求大量处于等待状态，借此机会，正好对比了下HttpClient和HttpURLConnection，以此铭记。
-HttpClient 执行一次Http Get请求主要经过以下步骤：    1，租一个 Http链接，源码中用了lease这">
+<meta name="twitter:title" content="美团点评case对应技术负责团队">
+<meta name="twitter:description" content="客服小伙伴每天面对成百上千的case，经常找不到对应的负责，以下整理了下各个业务对应的负责团队和负责人，希望客服小伙从case中提取有效信息，找到相应团队，该信息会持续更新。
+1，商家验券问题，如验不了券，请商家提供下验券失败的返回信息，验证门店非法等问题请联系–券服务研发 &amp;#x61;&amp;#x70;&amp;#111;&amp;#108;&amp;#x6c;&amp;#x6f;&amp;#x2e;&amp;#114;&amp;#x65;&amp;#x63;&amp;#">
 
     
     <link rel="alternative" href="/atom.xml" title="天生爱跑" type="application/atom+xml">
@@ -83,14 +83,14 @@ HttpClient 执行一次Http Get请求主要经过以下步骤：    1，租一�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/13/HttpClient踩坑有感/" title="HttpClient踩坑有感" itemprop="url">HttpClient踩坑有感</a>
+      <a href="/2016/03/15/美团点评case对应技术负责团队/" title="美团点评case对应技术负责团队" itemprop="url">美团点评case对应技术负责团队</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="EdwardGuo" target="_blank" itemprop="author">EdwardGuo</a>
 		
   <p class="article-time">
-    <time datetime="2016-03-13T14:35:33.000Z" itemprop="datePublished"> 發表於 2016-03-13</time>
+    <time datetime="2016-03-15T03:04:02.000Z" itemprop="datePublished"> 發表於 2016-03-15</time>
     
   </p>
 </header>
@@ -103,15 +103,9 @@ HttpClient 执行一次Http Get请求主要经过以下步骤：    1，租一�
 		
 		</div>
 		
-		<p>本周在HttpClient上犯了个低级错误，未给HttpClient设置最大连接数(HttpClient默认单路由最大Http连接数为2)，导致并发量高时Http请求大量处于等待状态，借此机会，正好对比了下HttpClient和HttpURLConnection，以此铭记。</p>
-<p>HttpClient 执行一次Http Get请求主要经过以下步骤：<br>    1，租一个 Http链接，源码中用了lease这个关键字，个人觉得lease这是和HttpURLConnection最大的区别，租表示用完就还回去，而HttpURLConnection使用完毕后就close。<br>    2，判断当前是否已经和目标主机之间连接是否已经打开，如果没有，则打开socket连接。<br>    3，TCP连接建立，便向目标主机发送Http请求，待目标主机处理请求后返回Http结果。<br>    4，请求处理完毕之后，接下来就是与HttpURLConnection区别最大的地方，需要判断是否要回收该Http连接重新放回连接池，主要是对返回的HttpResponse进行判断。<br>        4.1，先检查Http头部文件里的Connection属性，如果为close表示连接已关闭，不能回收。<br>        4.2，如果Http头部文件里的Connection属性为:keep-alive，表示为持久练级，可以回收，http 1.1 以后默认都是持久连接,http 1.0 以前为短连接。<br>    5，如果请求能被回收，再经过校验(如，是否已超时)，重新放回连接池。</p>
-<p>以上便是HttpClient的执行一个Http请求的经过，而对于Java自带的Http实现类HttpURLConnection,执行一个Http请求如下：<br>    1，打开一个Http连接。<br>    2，设置超时时间和请求方式，Get 或者POST。<br>    3，建立TCP连接，向目标主机发送Http请求。<br>    4，接收请求返回结果，关闭连接。</p>
-<pre><code>没有对两者具体源码实现原理做深刻对比，HttpClient的源码实现比较复杂，就不阐述了，从实现来看，HttpClient和HttpURLConnection最大的区别在于一个是租了一个连接，用了之后再放回连接池，而另一个则是新建一个连接。HttpClient维护了一个连接池，不必每次都新建，从而使得在同样的时间，能处理更大吞吐量的Http请求。HttpURLConnection是Jdk自带的Http实现，优点是简单易用。性能方面，个人觉得HttpURLConnection在并发量小的情况会有优势，
-HttpClient有很多请求校验，以及请求报文，报文头，线程池管理等复杂对象初始化过程，但是在高并发情况，HttpClient更有优势。
-
-所以在Http并发量较大情况下，优先选择HttpClient，当然使用HttpClient要先理解清楚Http配置参数的含义，如最大连接数，单路由最大连接数，请求连接超时时间，Socket超时时间等等，否则会带来潜在的风险。
-当然如果Http并发量不大的情况，HttpURLConnection也是不错的选择，简单明了不易出错。
-</code></pre>  
+		<p>客服小伙伴每天面对成百上千的case，经常找不到对应的负责，以下整理了下各个业务对应的负责团队和负责人，希望客服小伙从case中提取有效信息，找到相应团队，该信息会持续更新。</p>
+<p>1，商家验券问题，如验不了券，请商家提供下验券失败的返回信息，验证门店非法等问题请联系–券服务研发 <a href="/&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#x61;&#x70;&#111;&#108;&#x6c;&#x6f;&#x2e;&#114;&#x65;&#x63;&#x65;&#105;&#112;&#116;&#x40;&#x64;&#x69;&#x61;&#x6e;&#x70;&#x69;&#110;&#103;&#46;&#x63;&#x6f;&#109;">&#x61;&#x70;&#111;&#108;&#x6c;&#x6f;&#x2e;&#114;&#x65;&#x63;&#x65;&#105;&#112;&#116;&#x40;&#x64;&#x69;&#x61;&#x6e;&#x70;&#x69;&#110;&#103;&#46;&#x63;&#x6f;&#109;</a>，紧急联系人郭利兵，娄高明。<br>2，用户发券问题，消费者购买团购券，支付成功后不能发券，请联系–券服务研发 <a href="/&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#97;&#112;&#x6f;&#x6c;&#x6c;&#x6f;&#x2e;&#114;&#x65;&#99;&#x65;&#105;&#112;&#116;&#64;&#x64;&#105;&#x61;&#x6e;&#112;&#x69;&#110;&#103;&#x2e;&#x63;&#x6f;&#109;">&#97;&#112;&#x6f;&#x6c;&#x6c;&#x6f;&#x2e;&#114;&#x65;&#99;&#x65;&#105;&#112;&#116;&#64;&#x64;&#105;&#x61;&#x6e;&#112;&#x69;&#110;&#103;&#x2e;&#x63;&#x6f;&#109;</a>，紧急联系人郭利兵，娄高明。<br>3，团购退款问题，如发券退款后一直处于审核中，退款异常等问题，请联系–支付开发测试邮件组 <a href="/&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;&#112;&#x61;&#121;&#99;&#x65;&#110;&#116;&#101;&#114;&#45;&#114;&#x64;&#45;&#x71;&#x61;&#64;&#x64;&#x69;&#x61;&#x6e;&#x70;&#x69;&#x6e;&#103;&#x2e;&#99;&#111;&#x6d;">&#112;&#x61;&#121;&#99;&#x65;&#110;&#116;&#101;&#114;&#45;&#114;&#x64;&#45;&#x71;&#x61;&#64;&#x64;&#x69;&#x61;&#x6e;&#x70;&#x69;&#x6e;&#103;&#x2e;&#99;&#111;&#x6d;</a>，紧急联系人郭利兵，娄高明。<br>4，闪惠支付问题，如闪惠买单失败，闪惠买单后商户看不到买单记录，请联系–hui-dev@dianping.com，紧急联系人，夏之冬。<br>5，商家结算问题，如给商家结算数额不对，请联系–商家结算研发 <a href="/&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x73;&#x65;&#x74;&#116;&#108;&#x65;&#64;&#100;&#x69;&#97;&#x6e;&#x70;&#105;&#x6e;&#x67;&#46;&#99;&#111;&#x6d;">&#x73;&#x65;&#x74;&#116;&#108;&#x65;&#64;&#100;&#x69;&#97;&#x6e;&#x70;&#105;&#x6e;&#x67;&#46;&#99;&#111;&#x6d;</a>，紧急联系人徐浩亮。<br>6，团单搬单问题，如团单异常下线，团单未能双C同步，找不到团单等问题，请联系–交易平台.产品中心 <a href="/&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#98;&#x73;&#46;&#98;&#97;&#x40;&#100;&#105;&#97;&#x6e;&#x70;&#x69;&#110;&#103;&#46;&#99;&#x6f;&#x6d;">&#98;&#x73;&#46;&#98;&#97;&#x40;&#100;&#105;&#97;&#x6e;&#x70;&#x69;&#110;&#103;&#46;&#99;&#x6f;&#x6d;</a>，紧急联系人高甜甜。<br>7，团单销量展示，如团单销量展示数据不准确，请联系–交易平台主频道技术团队 <a href="/&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#116;&#x70;&#45;&#x6d;&#x61;&#x69;&#x6e;&#x40;&#x64;&#105;&#97;&#x6e;&#112;&#x69;&#x6e;&#103;&#46;&#x63;&#111;&#x6d;">&#116;&#x70;&#45;&#x6d;&#x61;&#x69;&#x6e;&#x40;&#x64;&#105;&#97;&#x6e;&#112;&#x69;&#x6e;&#103;&#46;&#x63;&#111;&#x6d;</a>，紧急联系人，蒋星，马明兴。<br>8，商家自促问题，如自促突然消失，请联系–商家服务研发组 <a href="/&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#109;&#115;&#x40;&#100;&#105;&#97;&#110;&#x70;&#x69;&#110;&#103;&#46;&#x63;&#x6f;&#x6d;">&#109;&#115;&#x40;&#100;&#105;&#97;&#110;&#x70;&#x69;&#110;&#103;&#46;&#x63;&#x6f;&#x6d;</a>，紧急联系人沈佩琪，赵宇然。<br>9，App相关问题，如IOS，安卓点评管家登陆不了，或者登陆后无法选择验证门店，请联系–交易后台客户端 <a href="/&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#100;&#105;&#97;&#110;&#112;&#x69;&#110;&#103;&#66;&#x43;&#64;&#x64;&#105;&#97;&#110;&#112;&#x69;&#110;&#x67;&#x2e;&#99;&#111;&#x6d;">&#100;&#105;&#97;&#110;&#112;&#x69;&#110;&#103;&#66;&#x43;&#64;&#x64;&#105;&#97;&#110;&#112;&#x69;&#110;&#x67;&#x2e;&#99;&#111;&#x6d;</a>，紧急联系人季浩勉。<br>10，第三方对接问题，如商户想申请和点评对接，请联系–吴文杰，宋衡。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -123,7 +117,7 @@ HttpClient有很多请求校验，以及请求报文，报文头，线程池管�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/03/13/HttpClient踩坑有感/" data-title="HttpClient踩坑有感 | 天生爱跑" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/03/15/美团点评case对应技术负责团队/" data-title="美团点评case对应技术负责团队 | 天生爱跑" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -136,19 +130,11 @@ HttpClient有很多请求校验，以及请求报文，报文头，线程池管�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/15/美团点评case对应技术负责团队/" title="美团点评case对应技术负责团队">
-  <strong>上一篇：</strong><br/>
-  <span>
-  美团点评case对应技术负责团队</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/02/13/规规矩矩做狗/"  title="规规矩矩做狗">
+<a href="/2016/03/13/HttpClient踩坑有感/"  title="HttpClient踩坑有感">
  <strong>下一篇：</strong><br/> 
- <span>规规矩矩做狗
+ <span>HttpClient踩坑有感
 </span>
 </a>
 </div>
