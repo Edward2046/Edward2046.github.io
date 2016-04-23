@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Linux下循环使用Curl命令 | 天生爱跑</title>
+    <title>买车后你的生活有变化吗? | 天生爱跑</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="EdwardGuo">
     
 
     
-    <meta name="description" content="1.关于curl
-再说curl有必要了解下libcurl,摘自wikipedia &amp;quot;libcurl is a free client-side URL transfer library, supporting, FTP, FTPS, HTTP, HTTPS, SCP, Telent..&amp;quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而cur">
+    <meta name="description" content="2016年2月份在抱着些许担忧的情况下买了车，当初最主要的担忧是无处停车，虽然停车确实遇到了些麻烦，但是如果真买车了，该解决的问题都会解决的，
+ 停车问题最后还是幸运地解决了，下面买车后生活的变化以及希望车能给自己带来哪些生活的提高。     变化如下：     1）对上海的交通更加熟悉，也能熟练地穿梭于地面和高架，同时也熟悉了汽车理赔，修车，避免事故等等。     2）工作之余的时间可以去开开车">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux下循环使用Curl命令">
-<meta property="og:url" content="http://yoursite.com/2016/01/31/Linux下循环使用Curl脚本/index.html">
+<meta property="og:title" content="买车后你的生活有变化吗?">
+<meta property="og:url" content="http://yoursite.com/2016/04/23/买车后你的生活有变化吗/index.html">
 <meta property="og:site_name" content="天生爱跑">
-<meta property="og:description" content="1.关于curl
-再说curl有必要了解下libcurl,摘自wikipedia &amp;quot;libcurl is a free client-side URL transfer library, supporting, FTP, FTPS, HTTP, HTTPS, SCP, Telent..&amp;quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而cur">
-<meta property="og:updated_time" content="2016-02-01T03:01:18.000Z">
+<meta property="og:description" content="2016年2月份在抱着些许担忧的情况下买了车，当初最主要的担忧是无处停车，虽然停车确实遇到了些麻烦，但是如果真买车了，该解决的问题都会解决的，
+ 停车问题最后还是幸运地解决了，下面买车后生活的变化以及希望车能给自己带来哪些生活的提高。     变化如下：     1）对上海的交通更加熟悉，也能熟练地穿梭于地面和高架，同时也熟悉了汽车理赔，修车，避免事故等等。     2）工作之余的时间可以去开开车">
+<meta property="og:updated_time" content="2016-04-23T12:52:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux下循环使用Curl命令">
-<meta name="twitter:description" content="1.关于curl
-再说curl有必要了解下libcurl,摘自wikipedia &amp;quot;libcurl is a free client-side URL transfer library, supporting, FTP, FTPS, HTTP, HTTPS, SCP, Telent..&amp;quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而cur">
+<meta name="twitter:title" content="买车后你的生活有变化吗?">
+<meta name="twitter:description" content="2016年2月份在抱着些许担忧的情况下买了车，当初最主要的担忧是无处停车，虽然停车确实遇到了些麻烦，但是如果真买车了，该解决的问题都会解决的，
+ 停车问题最后还是幸运地解决了，下面买车后生活的变化以及希望车能给自己带来哪些生活的提高。     变化如下：     1）对上海的交通更加熟悉，也能熟练地穿梭于地面和高架，同时也熟悉了汽车理赔，修车，避免事故等等。     2）工作之余的时间可以去开开车">
 
     
     <link rel="alternative" href="/atom.xml" title="天生爱跑" type="application/atom+xml">
@@ -83,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/31/Linux下循环使用Curl脚本/" title="Linux下循环使用Curl命令" itemprop="url">Linux下循环使用Curl命令</a>
+      <a href="/2016/04/23/买车后你的生活有变化吗/" title="买车后你的生活有变化吗?" itemprop="url">买车后你的生活有变化吗?</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="EdwardGuo" target="_blank" itemprop="author">EdwardGuo</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-31T11:48:20.000Z" itemprop="datePublished"> 發表於 2016-01-31</time>
+    <time datetime="2016-04-23T10:48:52.000Z" itemprop="datePublished"> 發表於 2016-04-23</time>
     
   </p>
 </header>
@@ -103,39 +103,29 @@
 		
 		</div>
 		
-		<pre><code>1.关于curl
-再说curl有必要了解下libcurl,摘自wikipedia &quot;libcurl is a free client-side URL transfer library, supporting, FTP, FTPS, HTTP, HTTPS, SCP, Telent..&quot;,也就是这说libcurl是个URL的传输工具包，支持各种协议的传输并且是线程安全，而curl不过是libcurl的一个命令而已，curl最常用的方式便是curl www.example.com 用于获取该url的网页内容。
-以下为curl的常用参数
-curl -o /tmp/sina.html http://www.sina.com.cn/ : 将新浪主页的内容抓取下来并存放到本地的tmp目录下。
-curl -I http://www.sina.com.cn/ :只显示文档信息，不显示全部内容，主要用于判断该url是否OK。
-curl -X POST http://www.sina.com.cn/: curl默认的http请求方式是GET，-x参数可以改变http请求方式。
+		<pre><code>2016年2月份在抱着些许担忧的情况下买了车，当初最主要的担忧是无处停车，虽然停车确实遇到了些麻烦，但是如果真买车了，该解决的问题都会解决的，
+</code></pre><p> 停车问题最后还是幸运地解决了，下面买车后生活的变化以及希望车能给自己带来哪些生活的提高。<br>     变化如下：<br>     1）对上海的交通更加熟悉，也能熟练地穿梭于地面和高架，同时也熟悉了汽车理赔，修车，避免事故等等。<br>     2）工作之余的时间可以去开开车，而不是宅在公司或家里，生活多了些乐趣，毕竟喜欢开车，喜欢在车里听音乐(花4000块升级音响值)<br>     3) 晚上或周末去做做顺风车，遇到了各种各样乘客，培养了自己的忍耐力，也多了一个认识朋友的机会和平台，自己的工作和生活圈子太小，当然顺风车认识朋友概率也是极小。<br>     4）加班的时间短了，买车之前随随便便加班到11点，有车之后便想早点回家开车。<br>     5）写博客和看书学习的时间少了，有些得不偿失，还是需要安排时间学习看书，少逛点汽车论坛，多看下源代码。</p>
+<pre><code>希望车带来的些变化
+ 1）短途旅行开车会很方便。
+ 2）提高开车的技术，掌握路况。
+ 3）成为另一半的专车司机。
+ 4）带父母游玩下江浙沪。
 
-关于curl的常用使用方式就这些，下面看看如何在linux下循环使用curl,主要是linux中while和for循环的嵌套使用。
+ 最后合理安排下开车时间，尽量在11点半前回家，11点后不接单了，偶尔出去开车8点半-11点半开3个小时足矣了，不要耗费太多精力和时间。时间还是需要花在提升自己的核心价值上。
+说到核心价值，来说说看吧，最近技术上的有么有进步?
+作为一个5年工作经验的开发，我的核心竞争力是什么？今天好好问问自己，好好想想，哪些方面需要提高。
+核心竞争力：
+    1）项目搭建和项目设计的经验，经历过分库分表，项目重构解耦，搭建项目和设计项目的经验比以前多了很多。
+    2）需求分析能力和业务理解能力也提高了很多，能快速理解业务并执行开发计划。
+    3）并发编程方面的经验，幂等控制，高并发下业务的安全运行。
+    4）故障的排查和定位能力。
+    5）良好的团队沟通和跨团队合作能力。
+    6）强烈的责任感。
 
-2.while循环和for循环的嵌套使用。
-废话不多说，来个实例场景，我想看看大众点评网是不是每个城市都有对应的主页，思路如下：
-    a.通过while循环读取城市列表，每一行中有多个城市通过逗号分隔。
-    b.在while循环中，每读一行，for循环读取这一行中的每一个城市。
-    c.每读一个城市通过curl -I来获取返回HTTP请求信息。
-    d.打印结束，注意echo 后要加一个空格。
-
-看看代码：
-
-#!bin/bash
-#curl的小工具
-#cityList=&quot;shanghai,dalian,beijing,qingdao,nanchang,taiyuan&quot;
-RESULTFILE=&quot;/tmp/HttpCityCodeNew.txt&quot;
-IFS=&quot;,&quot;
-echo &quot;----------开始读取城市列表文件----------&quot;
-cat $1 | while read line
-do
-    for city in $line
-    do
-            curl http://www.dianping.com/$city -I &gt;&gt; $RESULTFILE
-    done
-    echo &quot;--------------结束一行的读取--------------&quot;
-done
-echo &quot;---------------结束所有的读取----------------&quot;
+需要提高：
+    1）项目经验能够理论化，项目经验回归理论技术，加深对技术的理解，譬如，这次重构使用的主要设计模式--抽象工厂模式，但是什么是抽象工厂模式，好好回归下。
+    2）重点深耕某个领域的知识，比如并发编程，譬如缓存的使用，譬如网络编程。
+    3）培养带领新人和团单管理的能力
 </code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
@@ -148,7 +138,7 @@ echo &quot;---------------结束所有的读取----------------&quot;
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/01/31/Linux下循环使用Curl脚本/" data-title="Linux下循环使用Curl命令 | 天生爱跑" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/04/23/买车后你的生活有变化吗/" data-title="买车后你的生活有变化吗? | 天生爱跑" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -161,19 +151,11 @@ echo &quot;---------------结束所有的读取----------------&quot;
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/01/31/Lniux下循环使用Curl脚本/" title="Linux下循环使用Curl命令">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Linux下循环使用Curl命令</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/01/31/深入分析Volatile/"  title="深入分析Volatile">
+<a href="/2016/03/15/美团点评case对应技术负责团队/"  title="美团点评case对应技术负责团队">
  <strong>下一篇：</strong><br/> 
- <span>深入分析Volatile
+ <span>美团点评case对应技术负责团队
 </span>
 </a>
 </div>
