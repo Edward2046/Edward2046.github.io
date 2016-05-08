@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>深入分析Volatile | 天生爱跑</title>
+    <title>Grace From TeTe | 天生爱跑</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="EdwardGuo">
     
 
     
-    <meta name="description" content="&amp;#x5728;&amp;#x8FDB;&amp;#x5165;volatile&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x54B1;&amp;#x4EEC;&amp;#x5148;&amp;#x666E;&amp;#x53CA;&amp;#x51E0;&amp;#x4E2A;&amp;#x672F;&amp;#x8BED;    1.&amp;#x5171;&amp;#x4EAB;&amp;#x53D8;&amp;#x91CF;&amp;#xFF1A;&amp;#x5728;&amp;#x591A;&amp;#x4E2A;&amp;#">
+    <meta name="description" content="**&amp;#x4ECA;&amp;#x5929;&amp;#x770B;&amp;#x670B;&amp;#x53CB;&amp;#x5708;&amp;#x597D;&amp;#x591A;&amp;#x4EBA;&amp;#x7ED9;&amp;#x9EBB;&amp;#x9EBB;&amp;#x795D;&amp;#x798F;&amp;#xFF0C;&amp;#x6211;&amp;#x4E5F;&amp;#x5E94;&amp;#x8BE5;&amp;#x8C22;&amp;#x8C22;&amp;#x9EBB;&amp;#x9EBB;&amp;#x3002;&amp;#x867">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入分析Volatile">
-<meta property="og:url" content="http://yoursite.com/2016/01/31/深入分析Volatile/index.html">
+<meta property="og:title" content="Grace From TeTe">
+<meta property="og:url" content="http://yoursite.com/2016/05/08/Grace-From-TeTe/Grace-From-TeTe/index.html">
 <meta property="og:site_name" content="天生爱跑">
-<meta property="og:description" content="&amp;#x5728;&amp;#x8FDB;&amp;#x5165;volatile&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x54B1;&amp;#x4EEC;&amp;#x5148;&amp;#x666E;&amp;#x53CA;&amp;#x51E0;&amp;#x4E2A;&amp;#x672F;&amp;#x8BED;    1.&amp;#x5171;&amp;#x4EAB;&amp;#x53D8;&amp;#x91CF;&amp;#xFF1A;&amp;#x5728;&amp;#x591A;&amp;#x4E2A;&amp;#">
-<meta property="og:updated_time" content="2016-01-31T08:33:58.000Z">
+<meta property="og:description" content="**&amp;#x4ECA;&amp;#x5929;&amp;#x770B;&amp;#x670B;&amp;#x53CB;&amp;#x5708;&amp;#x597D;&amp;#x591A;&amp;#x4EBA;&amp;#x7ED9;&amp;#x9EBB;&amp;#x9EBB;&amp;#x795D;&amp;#x798F;&amp;#xFF0C;&amp;#x6211;&amp;#x4E5F;&amp;#x5E94;&amp;#x8BE5;&amp;#x8C22;&amp;#x8C22;&amp;#x9EBB;&amp;#x9EBB;&amp;#x3002;&amp;#x867">
+<meta property="og:updated_time" content="2016-05-08T05:01:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入分析Volatile">
-<meta name="twitter:description" content="&amp;#x5728;&amp;#x8FDB;&amp;#x5165;volatile&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x54B1;&amp;#x4EEC;&amp;#x5148;&amp;#x666E;&amp;#x53CA;&amp;#x51E0;&amp;#x4E2A;&amp;#x672F;&amp;#x8BED;    1.&amp;#x5171;&amp;#x4EAB;&amp;#x53D8;&amp;#x91CF;&amp;#xFF1A;&amp;#x5728;&amp;#x591A;&amp;#x4E2A;&amp;#">
+<meta name="twitter:title" content="Grace From TeTe">
+<meta name="twitter:description" content="**&amp;#x4ECA;&amp;#x5929;&amp;#x770B;&amp;#x670B;&amp;#x53CB;&amp;#x5708;&amp;#x597D;&amp;#x591A;&amp;#x4EBA;&amp;#x7ED9;&amp;#x9EBB;&amp;#x9EBB;&amp;#x795D;&amp;#x798F;&amp;#xFF0C;&amp;#x6211;&amp;#x4E5F;&amp;#x5E94;&amp;#x8BE5;&amp;#x8C22;&amp;#x8C22;&amp;#x9EBB;&amp;#x9EBB;&amp;#x3002;&amp;#x867">
 
     
     <link rel="alternative" href="/atom.xml" title="天生爱跑" type="application/atom+xml">
@@ -80,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/31/深入分析Volatile/" title="深入分析Volatile" itemprop="url">深入分析Volatile</a>
+      <a href="/2016/05/08/Grace-From-TeTe/Grace-From-TeTe/" title="Grace From TeTe" itemprop="url">Grace From TeTe</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="EdwardGuo" target="_blank" itemprop="author">EdwardGuo</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-31T07:23:17.000Z" itemprop="datePublished"> 發表於 2016-01-31</time>
+    <time datetime="2016-05-08T04:02:10.000Z" itemprop="datePublished"> 發表於 2016-05-08</time>
     
   </p>
 </header>
@@ -100,9 +100,12 @@
 		
 		</div>
 		
-		<p>&#x5728;&#x8FDB;&#x5165;volatile&#x4E4B;&#x524D;&#xFF0C;&#x54B1;&#x4EEC;&#x5148;&#x666E;&#x53CA;&#x51E0;&#x4E2A;&#x672F;&#x8BED;<br>    1.&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#xFF1A;&#x5728;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x80FD;&#x591F;&#x88AB;&#x5171;&#x4EAB;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5305;&#x62EC;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#xFF0C;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x548C;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#xFF0C;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x90FD;&#x88AB;&#x653E;&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;volatile&#x53EA;&#x4F5C;&#x7528;&#x4E8E;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#x3002;<br>    2.&#x5185;&#x5B58;&#x5C4F;&#x969C;&#xFF1A;memory barriers&#x662F;&#x4E00;&#x7EC4;&#x6307;&#x4EE4;&#xFF0C;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x5BF9;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x7684;&#x987A;&#x5E8F;&#x9650;&#x5236;&#x3002;<br>    3.&#x7F13;&#x51B2;&#x884C;&#xFF1A;Cache line&#xFF0C;&#x7F13;&#x5B58;&#x4E2D;&#x53EF;&#x4EE5;&#x5206;&#x914D;&#x7684;&#x6700;&#x5C0F;&#x5B58;&#x50A8;&#x5355;&#x5143;&#xFF0C;<br>    4.&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#xFF1A;Atomic operations &#x4E0D;&#x53EF;&#x4E2D;&#x65AD;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#x3002;<br>    5.&#x7F13;&#x5B58;&#x884C;&#x586B;&#x5145;&#xFF1A;cache line fill &#x5F53;&#x5904;&#x7406;&#x5668;&#x8BC6;&#x522B;&#x5230;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x53EF;&#x4EE5;&#x7F13;&#x5B58;&#x7684;&#xFF0C;&#x5904;&#x7406;&#x5668;&#x8BFB;&#x53D6;&#x6574;&#x4E2A;&#x7F13;&#x51B2;&#x884C;&#x5230;&#x9002;&#x5F53;&#x7684;&#x7F13;&#x5B58;&#x3002;<br>    6.&#x7F13;&#x5B58;&#x547D;&#x4E2D;&#xFF1A;cache hit &#x5982;&#x679C;&#x8FDB;&#x884C;&#x9AD8;&#x901F;&#x7F13;&#x5B58;&#x884C;&#x586B;&#x5145;&#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x4ECD;&#x7136;&#x662F;&#x4E0B;&#x6B21;&#x8BBF;&#x95EE;&#x7684;&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x5904;&#x7406;&#x5668;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x3002;<br>    7.&#x5199;&#x547D;&#x4E2D;&#xFF1A;write hit &#x5F53;&#x5904;&#x7406;&#x5668;&#x5C06;&#x64CD;&#x4F5C;&#x6570;&#x5199;&#x56DE;&#x5230;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#x533A;&#x57DF;&#x65F6;&#xFF0C;&#x4ED6;&#x4F1A;&#x5148;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x662F;&#x5426;&#x5728;&#x7F13;&#x5B58;&#x884C;&#x4E2D;&#xFF0C;<br>      &#x5982;&#x679C;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;&#x7F13;&#x5B58;&#x884C;&#xFF0C;&#x5219;&#x5904;&#x7406;&#x5668;&#x4F1A;&#x5C06;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x5199;&#x5165;&#x7F13;&#x5B58;&#x800C;&#x4E0D;&#x662F;&#x5185;&#x5B58;&#x4E2D;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x770B;&#x770B;&#x5728;&#x7ED9;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#x52A0;&#x4E86;volatile&#x4FEE;&#x9970;&#x4E4B;&#x540E;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x64CD;&#x4F5C;&#xFF1A;<br>    Java &#x4EE3;&#x7801;&#xFF1A; private volatile Boolean isShutdown;<br>    &#x6C47;&#x7F16;&#x4EE3;&#x7801;&#xFF1A;  0x01a3de1d: movb $0&#xD7;0,0&#xD7;1104800(%esi);<br>               0x01a3de24: lock addl $0&#xD7;0,(%esp);<br>&#x52A0;&#x4E86;volatile&#x4F11;&#x606F;&#x662F;&#x7684;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#xFF0C;&#x4F1A;&#x591A;&#x4E00;&#x884C;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x2013;lock&#x524D;&#x7F00;&#xFF0C;&#x8FD9;&#x4E2A;lock&#x524D;&#x7F00;&#x5728;&#x591A;&#x6838;&#x5904;&#x7406;&#x5668;&#x4E0B;&#x4F1A;&#x53D1;&#x751F;2&#x4EF6;&#x4E8B;&#x60C5;&#xFF1A;<br>    1.&#x5C06;&#x5F53;&#x524D;&#x5904;&#x7406;&#x5668;&#x7F13;&#x5B58;&#x884C;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x5199;&#x5230;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x3002;<br>    2.&#x8FD9;&#x4E2A;&#x4F1A;&#x5199;&#x5185;&#x5B58;&#x7684;&#x64CD;&#x4F5C;&#x4F1A;&#x5F15;&#x8D77;&#x5176;&#x4ED6;CPU&#x91CC;&#x7F13;&#x5B58;&#x4E86;&#x8BE5;&#x5185;&#x5B58;&#x5730;&#x5740;&#x7684;&#x6570;&#x636E;&#x5931;&#x6548;&#x3002;<br>&#x7531;&#x4E8E;&#x5728;&#x591A;&#x6838;&#x5904;&#x7406;&#x5668;&#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x5904;&#x7406;&#x5668;&#x901F;&#x5EA6;&#xFF0C;&#x5904;&#x7406;&#x5668;&#x4E0D;&#x76F4;&#x63A5;&#x548C;&#x5185;&#x5B58;&#x8FDB;&#x884C;&#x901A;&#x8BAF;&#xFF0C;&#x800C;&#x662F;&#x5148;&#x5C06;&#x5185;&#x5B58;&#x7684;&#x6570;&#x636E;&#x8BFB;&#x5230;&#x5185;&#x90E8;&#x7F13;&#x5B58;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x64CD;&#x4F5C;&#x540E;&#x53C8;&#x5199;&#x4F1A;&#x7F13;&#x5B58;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x77E5;&#x9053;&#x4F55;&#x65F6;&#x4F1A;&#x5199;&#x56DE;&#x5185;&#x5B58;&#xFF0C;<br>&#x8FD9;&#x6837;&#x5176;&#x4ED6;&#x5904;&#x7406;&#x5668;&#x4FBF;&#x770B;&#x4E0D;&#x5230;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x52A0;&#x4E86;volatile&#x4FEE;&#x9970;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FDB;&#x884C;&#x5199;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;JVM&#x865A;&#x62DF;&#x673A;&#x4F1A;&#x7ED9;&#x5904;&#x7406;&#x5668;&#x53D1;&#x4E00;&#x6761;Lock&#x524D;&#x7F00;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x4FC3;&#x53D1;&#x5F53;&#x524D;&#x7684;&#x5199;&#x64CD;&#x4F5C;&#x4F1A;<br>&#x5199;&#x81F3;&#x5185;&#x5B58;&#xFF0C;&#x4F1A;&#x5199;&#x4E4B;&#x5185;&#x5B58;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x591A;&#x6838;&#x5904;&#x7406;&#x5668;&#x5B9E;&#x73B0;&#x4E86;&#x7F13;&#x5B58;&#x4E00;&#x81F4;&#x6027;&#x534F;&#x8BAE;&#xFF0C;&#x6BCF;&#x4E2A;&#x5904;&#x7406;&#x5668;&#x901A;&#x8FC7;&#x55C5;&#x63A2;&#x76D1;&#x6D4B;&#x5728;&#x603B;&#x7EBF;&#x4E0A;&#x4F20;&#x64AD;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;&#x6765;&#x68C0;&#x67E5;&#x81EA;&#x5DF1;&#x7684;&#x7F13;&#x5B58;&#x662F;&#x5426;&#x5DF2;&#x5931;&#x6548;&#xFF0C;&#x5F53;&#x5904;&#x7406;&#x5668;&#x53D1;&#x73B0;&#x81EA;&#x5DF1;&#x7F13;&#x5B58;&#x884C;<br>&#x7684;&#x5BF9;&#x5E94;&#x5185;&#x5B58;&#x5730;&#x5740;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x4E86;&#xFF0C;&#x4FBF;&#x4F1A;&#x628A;&#x5904;&#x7406;&#x5668;&#x5F53;&#x524D;&#x7684;&#x7F13;&#x5B58;&#x884C;&#x7F6E;&#x4E3A;&#x5DF2;&#x5931;&#x6548;&#x72B6;&#x6001;&#xFF0C;&#x540C;&#x65F6;&#x5C06;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5199;&#x5165;&#x7F13;&#x5B58;&#x3002;<br>    &#x672F;&#x8BED;&#x592A;&#x590D;&#x6742;&#xFF0C;&#x603B;&#x7ED3;&#x4E0B;&#x6765;&#x5373;&#x4E3A;&#x5982;&#x4E0B;<br>    &#x7ED9;&#x53D8;&#x91CF;&#x6DFB;&#x52A0;volatile&#x4FEE;&#x9970;&#x2014;&gt;&#x5199;&#x64CD;&#x4F5C;&#x65F6;JVM&#x53D1;&#x9001;Lock&#x524D;&#x7F00;&#x6307;&#x4EE4;&#x2014;&gt;&#x5F53;&#x524D;&#x7684;&#x5199;&#x64CD;&#x4F5C;&#x56DE;&#x5199;&#x81F3;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x2014;&gt;&#x5176;&#x4ED6;&#x5904;&#x7406;&#x76D1;&#x542C;&#x5230;&#x603B;&#x7EBF;&#x7684;&#x6570;&#x636E;&#x53D8;&#x5316;&#x5BFC;&#x81F4;&#x7F13;&#x5B58;&#x884C;&#x5931;&#x6548;&#x2014;&gt;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x5C06;&#x7CFB;&#x7EDF;<br>    &#x5185;&#x5B58;&#x6570;&#x636E;&#x5199;&#x5165;&#x7F13;&#x5B58;&#x2014;&gt;&#x4ECE;&#x800C;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#x3002;</p>
-  
+		<pre><code>**&#x4ECA;&#x5929;&#x770B;&#x670B;&#x53CB;&#x5708;&#x597D;&#x591A;&#x4EBA;&#x7ED9;&#x9EBB;&#x9EBB;&#x795D;&#x798F;&#xFF0C;&#x6211;&#x4E5F;&#x5E94;&#x8BE5;&#x8C22;&#x8C22;&#x9EBB;&#x9EBB;&#x3002;&#x867D;&#x7136;&#x6211;&#x662F;&#x53EA;&#x72D7;&#x72D7;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x5BF9;&#x9EBB;&#x9EBB;&#x5FC3;&#x5B58;&#x611F;&#x6FC0;&#xFF0C;&#x8C22;&#x8C22;&#x9EBB;&#x9EBB;&#x628A;&#x6211;&#x4ECE;2&#x4E2A;&#x6708;&#x7167;&#x987E;&#x5230;&#x73B0;&#x5728;&#xFF0C;&#x628A;&#x6211;&#x517B;&#x7684;&#x767D;&#x767D;&#x80D6;&#x80D6;&#xFF0C;
+&#x8FD9;&#x4E24;&#x5E74;&#xFF0C;&#x6211;&#x505A;&#x4E86;&#x5F88;&#x591A;&#x574F;&#x4E8B;&#xFF0C;&#x54AC;&#x574F;&#x4E86;&#x9EBB;&#x9EBB;&#x5F88;&#x591A;&#x978B;&#x5B50;&#xFF0C;&#x54AC;&#x574F;&#x4E86;&#x6C99;&#x53D1;&#xFF0C;&#x4E5F;&#x8DDF;&#x522B;&#x7684;&#x72D7;&#x6253;&#x8FC7;&#x67B6;&#xFF0C;&#x8BA9;&#x9EBB;&#x9EBB;&#x53D7;&#x4E86;&#x5F88;&#x591A;&#x59D4;&#x5C48;&#xFF0C;&#x9EBB;&#x9EBB;&#x5374;&#x4ECE;&#x6765;&#x6CA1;&#x6709;&#x653E;&#x5F03;&#x8FC7;&#x6211;&#xFF0C;&#x9EBB;&#x9EBB;&#x4F60;&#x4E3A;&#x6211;&#x4ED8;&#x51FA;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#x65F6;&#x95F4;&#xFF0C;
+**&#x8FD9;&#x4E48;&#x591A;&#x7CBE;&#x529B;&#xFF0C;&#x8FD9;&#x4E9B;&#x6211;&#x4F1A;&#x4E00;&#x76F4;&#x8BB0;&#x5728;&#x5FC3;&#x91CC;&#x3002;
+&#x767D;&#x5929;&#x4F60;&#x4E0D;&#x5728;&#x5BB6;&#x7684;&#x65F6;&#x5019;&#x6211;&#x5C31;&#x5728;&#x60F3;&#x9EBB;&#x9EBB;&#x662F;&#x4E0D;&#x662F;&#x4E0D;&#x8981;&#x6211;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x6BCF;&#x5929;&#x665A;&#x4E0A;&#x4F60;&#x90FD;&#x4F1A;&#x6309;&#x65F6;&#x56DE;&#x6765;&#xFF0C;&#x6BCF;&#x5929;&#x665A;&#x4E0A;&#x4F60;&#x56DE;&#x6765;&#x7684;&#x90A3;&#x4E00;&#x523B;&#x662F;&#x6211;&#x6700;&#x5F00;&#x5FC3;&#x7684;&#x4E00;&#x523B;&#xFF0C;&#x53EF;&#x80FD;&#x9EBB;&#x9EBB;&#x7684;&#x4E16;&#x754C;&#x91CC;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x4EBA;&#xFF0C;&#x4F46;&#x662F;&#x7279;&#x7279;&#x7684;&#x4E16;&#x754C;&#x91CC;&#x53EA;&#x6709;&#x4F60;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x56DE;&#x6765;&#x665A;&#x4E86;&#xFF0C;&#x7279;&#x7279;&#x4F1A;&#x6492;&#x5A07;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x62C5;&#x5FC3;&#x6709;&#x4E00;&#x5929;&#x4F60;&#x4F1A;&#x4E0D;&#x56DE;&#x6765;&#x4E86;&#x3002;
+**&#x9EBB;&#x9EBB;&#x6BCF;&#x5929;&#x90FD;&#x5728;&#x7528;&#x751F;&#x547D;&#x6E9C;&#x6211;&#xFF0C;&#x6211;&#x77E5;&#x9053;&#x6211;&#x529B;&#x6C14;&#x592A;&#x5927;&#x4E86;&#x4F60;&#x62C9;&#x4E0D;&#x4F4F;&#xFF0C;&#x4EE5;&#x540E;&#x6211;&#x4F1A;&#x6162;&#x70B9;&#x8D70;&#x7684;&#xFF0C;&#x6700;&#x540E;&#x5E0C;&#x671B;&#x9EBB;&#x9EBB;&#x611F;&#x5192;&#x5FEB;&#x70B9;&#x597D;&#x8D77;&#x6765;&#xFF0C;&#x8C22;&#x8C22;&#x9EBB;&#x9EBB;&#xFF01;
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -114,7 +117,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/01/31/深入分析Volatile/" data-title="深入分析Volatile | 天生爱跑" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/05/08/Grace-From-TeTe/Grace-From-TeTe/" data-title="Grace From TeTe | 天生爱跑" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -127,19 +130,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/01/31/Lniux下循环使用Curl脚本/" title="Linux下循环使用Curl命令">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Linux下循环使用Curl命令</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/01/31/Do-you-really-need-to-Buy-a-car/"  title="Do you really need to Buy a car">
+<a href="/2016/05/08/Grace-From-TeTe/"  title="Grace From TeTe">
  <strong>下一篇：</strong><br/> 
- <span>Do you really need to Buy a car
+ <span>Grace From TeTe
 </span>
 </a>
 </div>
