@@ -3,27 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>ClassNotFound VS NoClassDef | 天生爱跑</title>
+    <title>Netty Learning 1 | 天生爱跑</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="The difference between ClassNotFoundException and NoClassDefFoundError
---ClassNotFoundException
-Thrown when an application tries to load in a class through its string name using 
-    1) Class.forname(">
+    <meta name="description" content="&amp;#x4E86;&amp;#x89E3;Netty&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x5148;&amp;#x4E86;&amp;#x89E3;NIO&amp;#xFF0C;NIO&amp;#x7531;&amp;#x4E09;&amp;#x90E8;&amp;#x5206;&amp;#x7EC4;&amp;#x6210;&amp;#xFF1A;Buffer&amp;#xFF0C;Channel&amp;#xFF0C;Selector
+Buffer&amp;#xFF1A;Channel&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ClassNotFound VS NoClassDef">
-<meta property="og:url" content="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/index.html">
+<meta property="og:title" content="Netty Learning 1">
+<meta property="og:url" content="http://yoursite.com/2016/11/30/Netty-Learning-1/index.html">
 <meta property="og:site_name" content="天生爱跑">
-<meta property="og:description" content="The difference between ClassNotFoundException and NoClassDefFoundError
---ClassNotFoundException
-Thrown when an application tries to load in a class through its string name using 
-    1) Class.forname(">
-<meta property="og:updated_time" content="2016-01-07T12:03:42.000Z">
+<meta property="og:description" content="&amp;#x4E86;&amp;#x89E3;Netty&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x5148;&amp;#x4E86;&amp;#x89E3;NIO&amp;#xFF0C;NIO&amp;#x7531;&amp;#x4E09;&amp;#x90E8;&amp;#x5206;&amp;#x7EC4;&amp;#x6210;&amp;#xFF1A;Buffer&amp;#xFF0C;Channel&amp;#xFF0C;Selector
+Buffer&amp;#xFF1A;Channel&amp;#">
+<meta property="og:updated_time" content="2016-11-30T02:05:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ClassNotFound VS NoClassDef">
-<meta name="twitter:description" content="The difference between ClassNotFoundException and NoClassDefFoundError
---ClassNotFoundException
-Thrown when an application tries to load in a class through its string name using 
-    1) Class.forname(">
+<meta name="twitter:title" content="Netty Learning 1">
+<meta name="twitter:description" content="&amp;#x4E86;&amp;#x89E3;Netty&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x5148;&amp;#x4E86;&amp;#x89E3;NIO&amp;#xFF0C;NIO&amp;#x7531;&amp;#x4E09;&amp;#x90E8;&amp;#x5206;&amp;#x7EC4;&amp;#x6210;&amp;#xFF1A;Buffer&amp;#xFF0C;Channel&amp;#xFF0C;Selector
+Buffer&amp;#xFF1A;Channel&amp;#">
     
 
     
@@ -216,7 +210,7 @@ Thrown when an application tries to load in a class through its string name usin
 </aside>
 
             
-            <section id="main"><article id="post-ClassNotFound-VS-NoClassDef" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Netty-Learning-1" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -224,7 +218,7 @@ Thrown when an application tries to load in a class through its string name usin
                 
     
         <h1 class="article-title" itemprop="name">
-            ClassNotFound VS NoClassDef
+            Netty Learning 1
         </h1>
     
 
@@ -233,8 +227,8 @@ Thrown when an application tries to load in a class through its string name usin
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/01/07/ClassNotFound-VS-NoClassDef/">
-            <time datetime="2016-01-07T11:45:12.000Z" itemprop="datePublished">2016-01-07</time>
+        <a href="/2016/11/30/Netty-Learning-1/">
+            <time datetime="2016-11-30T02:02:46.000Z" itemprop="datePublished">2016-11-30</time>
         </a>
     </div>
 
@@ -249,20 +243,9 @@ Thrown when an application tries to load in a class through its string name usin
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>The difference between ClassNotFoundException and NoClassDefFoundError</p>
-<pre><code>--ClassNotFoundException
-Thrown when an application tries to load in a class through its string name using 
-    1) Class.forname() method in class Class.
-    2) ClassLoader.findSystemClass method in class ClassLoader.
-    3) ClassLoader.loadClass() in class ClassLoader.
-As for ClassNotFoundException, it appears that it may stem from trying to make reflective calls to classes at runtime, but the classes the program is trying to call is does not exist.
+            <pre><code>&#x4E86;&#x89E3;Netty&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x4E86;&#x89E3;NIO&#xFF0C;NIO&#x7531;&#x4E09;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;Buffer&#xFF0C;Channel&#xFF0C;Selector
+</code></pre><p>Buffer&#xFF1A;<br>Channel&#xFF1A;<br>Selector:</p>
 
-
---NoClassDefFoundError
-Thrown if the JVM or a ClassLoader instance tries to load in the definition of a class but no definition could be found.
-So, it appears that the NoClassDefFoundError occurs when the source was successfully compiled, but at runtime, the required class files were not found. This may be something that can happen in the distribution or production of JAR files, where not all the required class files were included.
-Usually happened when a ref is not found in a class
-</code></pre>
         
         </div>
         <footer class="article-footer">
@@ -272,7 +255,7 @@ Usually happened when a ref is not found in a class
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/" data-id="ciw4ain68000ct38sicj4dq5d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/30/Netty-Learning-1/" data-id="ciw4ain5z0007t38sa35qahpe" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -340,7 +323,7 @@ Usually happened when a ref is not found in a class
 
             
     
-        <a href="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/">評論</a>
+        <a href="http://yoursite.com/2016/11/30/Netty-Learning-1/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/11/30/Netty-Learning-1/">評論</a>
     
 
         </footer>
@@ -349,19 +332,10 @@ Usually happened when a ref is not found in a class
         
 <nav id="article-nav">
     
-        <a href="/2016/01/31/Do-you-really-need-to-Buy-a-car/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Do you really need to Buy a car
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/01/03/2016最想做的十件事情/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/09/08/Java-GC-总结/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">2016最想做的十件事情</div>
+            <div class="article-nav-title">Java GC 总结</div>
         </a>
     
 </nav>
@@ -540,9 +514,9 @@ Usually happened when a ref is not found in a class
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2016/01/07/ClassNotFound-VS-NoClassDef/';
+            this.page.url = 'http://yoursite.com/2016/11/30/Netty-Learning-1/';
         
-        this.page.identifier = 'ClassNotFound-VS-NoClassDef';
+        this.page.identifier = 'Netty-Learning-1';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
