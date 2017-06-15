@@ -14,7 +14,8 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/08/Java-GC-总结/index.html">
 <meta property="og:site_name" content="天生爱跑">
 <meta property="og:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x4E0A;&amp;#x7EBF;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x51FA;&amp;#x73B0;&amp;#x4E86;&amp;#x7A0D;&amp;#x5FAE;&amp;#x9891;&amp;#x7E41;&amp;#x7684;Full GC&amp;#xFF0C;&amp;#x7531;&amp;#x4E8E;&amp;#x6CA1;&amp;#x6709;&amp;#x5904;&amp;">
-<meta property="og:updated_time" content="2016-09-09T03:40:56.000Z">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/Java-GC-&#x603B;&#x7ED3;/Golden2.jpg">
+<meta property="og:updated_time" content="2017-06-15T09:33:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java GC 总结">
 <meta name="twitter:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x4E0A;&amp;#x7EBF;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x51FA;&amp;#x73B0;&amp;#x4E86;&amp;#x7A0D;&amp;#x5FAE;&amp;#x9891;&amp;#x7E41;&amp;#x7684;Full GC&amp;#xFF0C;&amp;#x7531;&amp;#x4E8E;&amp;#x6CA1;&amp;#x6709;&amp;#x5904;&amp;">
@@ -147,7 +148,7 @@
                 
     <div class="article-date">
         <a href="/2016/09/08/Java-GC-总结/" class="article-date">
-            <time datetime="2016-09-08T17:18:13.000Z" itemprop="datePublished">2016-09-08</time>
+            <time datetime="2016-09-08T09:18:13.000Z" itemprop="datePublished">2016-09-08</time>
         </a>
     </div>
 
@@ -156,7 +157,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p> &#x6700;&#x8FD1;&#x4E00;&#x4E2A;&#x65B0;&#x4E0A;&#x7EBF;&#x7684;&#x9879;&#x76EE;&#x51FA;&#x73B0;&#x4E86;&#x7A0D;&#x5FAE;&#x9891;&#x7E41;&#x7684;Full GC&#xFF0C;&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x5904;&#x7406;&#x8FC7;&#x7C7B;&#x4F3C;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x89E3;&#x51B3;GC&#x95EE;&#x9898;&#x4E0A;&#x663E;&#x5F97;&#x8FC7;&#x4E8E;&#x88AB;&#x52A8;&#xFF0C;&#x7F3A;&#x5C11;&#x8DB3;&#x591F;&#x7684;&#x7ECF;&#x9A8C;&#x548C;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#xFF0C;&#x6709;&#x5FC5;&#x8981;&#x5728;&#x6B64;&#x68B3;&#x7406;&#x4E0B;GC&#x7684;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#x3002;<br>     &#x4E00;&#xFF0C;Java&#x5806;&#x7684;&#x5206;&#x5E03;</p>
+            <p><img src="/2016/09/08/Java-GC-&#x603B;&#x7ED3;/Golden2.jpg" alt="logo"><br> &#x6700;&#x8FD1;&#x4E00;&#x4E2A;&#x65B0;&#x4E0A;&#x7EBF;&#x7684;&#x9879;&#x76EE;&#x51FA;&#x73B0;&#x4E86;&#x7A0D;&#x5FAE;&#x9891;&#x7E41;&#x7684;Full GC&#xFF0C;&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x5904;&#x7406;&#x8FC7;&#x7C7B;&#x4F3C;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x89E3;&#x51B3;GC&#x95EE;&#x9898;&#x4E0A;&#x663E;&#x5F97;&#x8FC7;&#x4E8E;&#x88AB;&#x52A8;&#xFF0C;&#x7F3A;&#x5C11;&#x8DB3;&#x591F;&#x7684;&#x7ECF;&#x9A8C;&#x548C;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#xFF0C;&#x6709;&#x5FC5;&#x8981;&#x5728;&#x6B64;&#x68B3;&#x7406;&#x4E0B;GC&#x7684;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#x3002;<br>     &#x4E00;&#xFF0C;Java&#x5806;&#x7684;&#x5206;&#x5E03;</p>
 <ul>
 <li><p>&#x65B0;&#x751F;&#x4EE3;&#xFF1A;&#x4E3B;&#x8981;&#x5B58;&#x653E;&#x65B0;&#x751F;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x65B0;&#x751F;&#x4EE3;&#x53C8;&#x5206;&#x4E3A;&#xFF1A;Eden&#x533A;&#xFF0C;From&#x533A;&#x548C;To&#x533A;&#xFF0C;From&#x548C;To&#x533A;&#x4E5F;&#x53EB;Survivor&#x533A;</p>
 <ul>
@@ -206,7 +207,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2016/09/08/Java-GC-总结/" data-id="cj3y8224z0009678ss5n93urs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/09/08/Java-GC-总结/" data-id="cj3y8f3cp00097p8sjqeivknd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -388,7 +389,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2016/12/18/Hash算法和HashMap/" class="title">Hash算法和HashMap</a></p>
-                            <p class="item-date"><time datetime="2016-12-18T20:49:03.000Z" itemprop="datePublished">2016-12-18</time></p>
+                            <p class="item-date"><time datetime="2016-12-18T12:49:03.000Z" itemprop="datePublished">2016-12-18</time></p>
                         </div>
                     </li>
                 
@@ -408,7 +409,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2016/11/30/Netty-Learning-1/" class="title">Netty Learning 1</a></p>
-                            <p class="item-date"><time datetime="2016-11-30T10:02:46.000Z" itemprop="datePublished">2016-11-30</time></p>
+                            <p class="item-date"><time datetime="2016-11-30T02:02:46.000Z" itemprop="datePublished">2016-11-30</time></p>
                         </div>
                     </li>
                 
@@ -418,7 +419,7 @@
                             <a href="/2016/09/08/Java-GC-总结/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/2016/09/08/Java-GC-&#x603B;&#x7ED3;/Golden2.jpg)" alt="Java GC 总结" class="thumbnail-image"></span>
     
     
 </a>
@@ -428,7 +429,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2016/09/08/Java-GC-总结/" class="title">Java GC 总结</a></p>
-                            <p class="item-date"><time datetime="2016-09-08T17:18:13.000Z" itemprop="datePublished">2016-09-08</time></p>
+                            <p class="item-date"><time datetime="2016-09-08T09:18:13.000Z" itemprop="datePublished">2016-09-08</time></p>
                         </div>
                     </li>
                 
@@ -438,7 +439,7 @@
                             <a href="/2016/07/21/服务端性能优化常见方法/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/2016/07/21/&#x670D;&#x52A1;&#x7AEF;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x5E38;&#x89C1;&#x65B9;&#x6CD5;/Golden3.jpg)" alt="服务端性能优化常见方法" class="thumbnail-image"></span>
     
     
 </a>
@@ -448,7 +449,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2016/07/21/服务端性能优化常见方法/" class="title">服务端性能优化常见方法</a></p>
-                            <p class="item-date"><time datetime="2016-07-21T09:22:03.000Z" itemprop="datePublished">2016-07-21</time></p>
+                            <p class="item-date"><time datetime="2016-07-21T01:22:03.000Z" itemprop="datePublished">2016-07-21</time></p>
                         </div>
                     </li>
                 
@@ -458,7 +459,7 @@
                             <a href="/2016/04/23/买车后你的生活有变化吗/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/2016/04/23/&#x4E70;&#x8F66;&#x540E;&#x4F60;&#x7684;&#x751F;&#x6D3B;&#x6709;&#x53D8;&#x5316;&#x5417;/images/Golden4.jpg)" alt="买车后你的生活有变化吗?" class="thumbnail-image"></span>
     
     
 </a>
@@ -468,7 +469,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2016/04/23/买车后你的生活有变化吗/" class="title">买车后你的生活有变化吗?</a></p>
-                            <p class="item-date"><time datetime="2016-04-23T18:48:52.000Z" itemprop="datePublished">2016-04-23</time></p>
+                            <p class="item-date"><time datetime="2016-04-23T10:48:52.000Z" itemprop="datePublished">2016-04-23</time></p>
                         </div>
                     </li>
                 
